@@ -1,4 +1,5 @@
 build/*.js
 source/js/vendor/*.js
+source/js/modules/map.js
 gulpfile.js
 webpack.config.cjs

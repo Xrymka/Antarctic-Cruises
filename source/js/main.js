@@ -1,22 +1,29 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
+import {resetDefaultClass} from './utils/remove-nojs';
+import {initBurger} from './modules/burger';
+import {initPhoneMask} from './modules/phone-mask';
+import {initForm} from './modules/send-form';
+import {initMap} from './modules/map';
 
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
 
   // Utils
-  // ---------------------------------
+  resetDefaultClass();
 
   iosVhFix();
 
-  // Modules
-  // ---------------------------------
+  initBurger();
+  initMap();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initModals();
+    initPhoneMask();
+    initForm();
   });
 });
 

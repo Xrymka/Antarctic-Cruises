@@ -36,6 +36,14 @@
   }
 }
 
+@mixin fonts($font-size: $fz-default, $line-height: 20px, $font-weight: 400, $color: $color-tangaroa, ) {
+  $font-family: $ff-main;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $color;
+}
+
 // Desktop first
 
 @mixin vp-1919 {
@@ -64,6 +72,12 @@
 
 @mixin vp-767 {
   @media (max-width: ($vp-768 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-475 {
+  @media (max-width: ($vp-476 - 1px)) {
     @content;
   }
 }

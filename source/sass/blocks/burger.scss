@@ -1,0 +1,66 @@
+.burger {
+  position: relative;
+  width: 24px;
+  height: 14px;
+  padding: 0;
+  border-top: 2px solid $color-alice-blue;
+  border-bottom: 2px solid $color-alice-blue;
+  background-color: transparent;
+  transition: opacity $trans-default, height $trans-default, transform $trans-default, border-color $trans-default;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $color-alice-blue;
+    transform: translateY(-50%);
+    transition: opacity $trans-default, background-color $trans-default;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 24px;
+    background-color: transparent;
+    transition: opacity $trans-default, background-color $trans-default;
+  }
+
+  @include hover-focus {
+    &::after,
+    &::before {
+      opacity: 0.8;
+    }
+  }
+}
+
+.burger.is-open {
+  width: 15px;
+  height: 23px;
+  transform: rotate(45deg);
+  border-color: transparent;
+  z-index: 5;
+
+  &::after,
+  &::before {
+    background-color: $color-tangaroa;
+  }
+
+  &::after {
+    top: 45%;
+    width: 19px;
+  }
+
+  &::before {
+    height: 100%;
+  }
+}
+
+.burger.no-js {
+  display: none;
+}

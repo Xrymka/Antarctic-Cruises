@@ -1,0 +1,111 @@
+.contacts {
+  width: 100%;
+  margin-bottom: 120px;
+
+  @include vp-1023 {
+    margin-bottom: 100px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 67px;
+  }
+}
+
+.contacts__container {
+  display: grid;
+  grid-template-columns: 48.3% 1fr;
+  gap: 100px;
+
+  @include vp-1023 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contacts__map {
+  aspect-ratio: 560/306;
+
+  @include vp-1023 {
+    min-width: initial;
+    aspect-ratio: 324/335;
+  }
+
+  @include vp-767 {
+    aspect-ratio: 290/316;
+    order: 2;
+  }
+}
+
+.contacts__map.no-js img {
+  max-height: 100%;
+
+  @include vp-767 {
+    width: 100%;
+  }
+}
+
+.contacts__map img {
+  display: none;
+}
+
+.contacts__info {
+  align-self: center;
+
+  @include fonts(18px, 27px, 500);
+  font-style: normal;
+}
+
+.contacts__info p {
+  margin: 0 0 32px;
+
+  @include vp-1023 {
+    margin-bottom: 28px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 25px;
+  }
+}
+
+.contacts__link {
+  display: inline-flex;
+  align-items: center;
+  transition: opacity $trans-default;
+
+  @include fonts(16px, 24px, 400);
+
+  @include vp-1023 {
+    align-items: flex-start;
+  }
+
+
+  @include hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    outline: 1px solid $color-tangaroa;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.contacts__link svg {
+  flex: none;
+  margin-right: 10px;
+
+  @include vp-1023 {
+    margin-top: 5px;
+  }
+}

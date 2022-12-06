@@ -1,0 +1,91 @@
+.header {
+  width: 100%;
+  position: absolute;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  z-index: 1;
+
+  @include vp-1023 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  @include vp-767 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+.header.no-js {
+  @include vp-767 {
+    position: static;
+  }
+}
+
+.header.no-js .header__container {
+  @include vp-767 {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__burger {
+  display: none;
+
+  @include vp-767 {
+    display: flex;
+  }
+}
+
+.header__logo {
+  margin-right: 20px;
+}
+
+.header__nav {
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.header__nav.no-js {
+  @include vp-767 {
+    display: block;
+  }
+}
+
+.header__nav.is-open {
+  @include vp-767 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: $color-tangaroa-opacity;
+  }
+}
+
+.header__logo.is-open {
+  margin-left: 35px;
+  z-index: 5;
+}
+
+.header__logo.is-open .logo__link,
+.header__logo.no-js .logo__link {
+  @include vp-767 {
+    color: $color-tangaroa;
+  }
+}
+
+.header__logo.is-open svg,
+.header__logo.no-js svg {
+  @include vp-767 {
+    fill: currentColor;
+  }
+}
