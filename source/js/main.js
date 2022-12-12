@@ -4,7 +4,8 @@ import {resetDefaultClass} from './utils/remove-nojs';
 import {initBurger} from './modules/burger';
 import {initPhoneMask} from './modules/phone-mask';
 import {initForm} from './modules/send-form';
-import {initMap} from './modules/map';
+import {createScript} from './modules/map/create-script';
+import {initMap} from './modules/map/map';
 
 // ---------------------------------
 
@@ -16,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
   iosVhFix();
 
   initBurger();
-  initMap();
+  createScript();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
@@ -24,6 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initModals();
     initPhoneMask();
     initForm();
+    initMap();
   });
 });
 

@@ -81,10 +81,10 @@
 
 .catalog__item:focus-within .catalog__content,
 .catalog__item:hover .catalog__content,
-.catalog__item:focus-within .catalog__content dl,
-.catalog__item:hover .catalog__content dl,
-.catalog__item:focus-within .catalog__content a,
-.catalog__item:hover .catalog__content a {
+.catalog__item:focus-within dl,
+.catalog__item:hover dl,
+.catalog__item:focus-within a,
+.catalog__item:hover a {
   z-index: 5;
 }
 
