@@ -1011,7 +1011,7 @@ button,
   margin-bottom: 145px;
 }
 
-.about__inner {
+.about__container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
@@ -1348,10 +1348,10 @@ button,
 
 .catalog__item:focus-within .catalog__content,
 .catalog__item:hover .catalog__content,
-.catalog__item:focus-within .catalog__content dl,
-.catalog__item:hover .catalog__content dl,
-.catalog__item:focus-within .catalog__content a,
-.catalog__item:hover .catalog__content a {
+.catalog__item:focus-within dl,
+.catalog__item:hover dl,
+.catalog__item:focus-within a,
+.catalog__item:hover a {
   z-index: 5;
 }
 
@@ -1743,7 +1743,7 @@ button,
     margin-bottom: 93px;
   }
 
-  .about__inner {
+  .about__container {
     -webkit-column-gap: 20px;
     -moz-column-gap: 20px;
     column-gap: 20px;
@@ -2066,7 +2066,7 @@ button,
     margin-bottom: 85px;
   }
 
-  .about__inner {
+  .about__container {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     gap: 43px 0;
