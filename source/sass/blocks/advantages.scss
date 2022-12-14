@@ -10,8 +10,8 @@
 
   background-image: image-set(
     "../img/bg/advantages.webp" 1x,
-    "../img/bg/advantages.jpg" 1x,
     "../img/bg/advantages@2x.webp" 2x,
+    "../img/bg/advantages.jpg" 1x,
     "../img/bg/advantages@2x.jpg" 2x
   );
 
@@ -22,8 +22,8 @@
 
     background-image: image-set(
       "../img/bg/advantages-tablet.webp" 1x,
-      "../img/bg/advantages-tablet.jpg" 1x,
       "../img/bg/advantages-tablet@2x.webp" 2x,
+      "../img/bg/advantages-tablet.jpg" 1x,
       "../img/bg/advantages-tablet@2x.jpg" 2x
     );
   }
@@ -35,9 +35,8 @@
 
     background-image: image-set(
       "../img/bg/advantages-mobile.webp" 1x,
-      "../img/bg/advantages-mobile.jpg" 1x,
       "../img/bg/advantages-mobile@2x.webp" 2x,
-      "../img/bg/advantages-mobile@2x.jpg" 2x
+      "../img/bg/advantages-mobile.jpg" 1x
     );
   }
 }

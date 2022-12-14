@@ -1,5 +1,9 @@
 const initMap = () => {
   let container = document.querySelector('#map');
+  let containerImg = container.querySelector('img');
+
+  containerImg.style.display = 'none';
+
   ymaps.ready(init);
   function init() {
     if (!container) {

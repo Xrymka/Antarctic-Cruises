@@ -51,15 +51,6 @@
   position: relative;
   aspect-ratio: 260/386;
 
-  &::after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: $tangaroa-to-bottom;
-  }
-
   @include hover {
     cursor: pointer;
   }
@@ -77,6 +68,7 @@
 .catalog__item:hover .catalog__cover {
   opacity: 0;
   appearance: none;
+  transition: opacity $trans-default;
 }
 
 .catalog__item:focus-within .catalog__content,
@@ -107,7 +99,6 @@
   position: absolute;
   margin: 23px 30px;
   bottom: 0;
-  z-index: 2;
 
   @include vp-1023 {
     margin: 27px 35px;
@@ -217,7 +208,8 @@
 
 .catalog__cover,
 .catalog__cover-img,
-.catalog__item::after,
+.catalog__cover-img::after,
+.catalog__item,
 .catalog__cover img {
   width: 100%;
   height: 100%;
@@ -226,6 +218,19 @@
 .catalog__cover {
   position: absolute;
   transition: opacity $trans-default;
+}
+
+.catalog__cover-img {
+  position: relative;
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $tangaroa-to-bottom;
+  }
 }
 
 .catalog__cover-img img {
