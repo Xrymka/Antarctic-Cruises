@@ -834,6 +834,9 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0;
@@ -887,6 +890,10 @@ button,
 
 .nav__link:active {
   opacity: 0.5;
+}
+
+.nav.no-js .nav__link::after {
+  background-color: #ffffff;
 }
 
 .logo__link {
@@ -1160,6 +1167,13 @@ button,
   font-size: 14px;
   line-height: 21px;
   border: 0;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.booking__form input:not([type=checkbox]):hover {
+  opacity: 0.8;
 }
 
 .booking__form label:last-of-type {
@@ -1170,6 +1184,14 @@ button,
   -ms-flex-align: center;
   align-items: center;
   text-align: left;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.booking__form label:last-of-type:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 .booking__form input[type=checkbox] {
@@ -1527,9 +1549,15 @@ button,
 }
 
 .contacts__link {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -1645,6 +1673,16 @@ button,
 .footer__social {
   margin-left: auto;
   margin-right: -10px;
+}
+
+.footer__nav {
+  margin-right: 50px;
+}
+
+.footer__nav ul {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 /* @mixin hover-focus {
@@ -1838,6 +1876,10 @@ button,
     margin-bottom: 9px;
   }
 
+  .advantages__item--zodiac h3 {
+    margin-bottom: 20px;
+  }
+
   .catalog {
     margin-bottom: 100px;
   }
@@ -1929,6 +1971,10 @@ button,
     margin-right: -7px;
   }
 
+  .footer__nav {
+    margin-right: 0;
+  }
+
   .footer__nav a {
     font-size: 12px;
     line-height: 15px;
@@ -1967,10 +2013,6 @@ button,
     padding-bottom: 12px;
   }
 
-  .header.no-js {
-    position: static;
-  }
-
   .header.no-js .header__container {
     -webkit-box-align: start;
     -ms-flex-align: start;
@@ -2005,13 +2047,11 @@ button,
     background-color: rgba(1, 24, 64, 0.7);
   }
 
-  .header__logo.is-open .logo__link,
-  .header__logo.no-js .logo__link {
+  .header__logo.is-open .logo__link {
     color: #011c40;
   }
 
-  .header__logo.is-open svg,
-  .header__logo.no-js svg {
+  .header__logo.is-open svg {
     fill: currentColor;
   }
 
@@ -2038,17 +2078,22 @@ button,
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
   }
 
   .nav.is-open .nav__list {
     height: 100vh;
     margin-left: 35px;
     padding: 75px 30px 30px 15px;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
     background-color: #ffffff;
+    overflow-y: auto;
   }
 
-  .nav.is-open .nav__link,
-  .nav.no-js .nav__link {
+  .nav.is-open .nav__link {
     color: #011c40;
   }
 
@@ -2092,7 +2137,7 @@ button,
   }
 
   .about__visual-content img {
-    width: 290px;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -2153,7 +2198,7 @@ button,
   }
 
   .advantages {
-    margin-bottom: 58px;
+    margin-bottom: 57px;
     padding-bottom: 67px;
     padding-top: 59px;
     background-image: -webkit-image-set(url("../img/bg/advantages-mobile.webp") 1x, url("../img/bg/advantages-mobile@2x.webp") 2x, url("../img/bg/advantages-mobile.jpg") 1x);
@@ -2180,6 +2225,10 @@ button,
     line-height: 24px;
   }
 
+  .advantages__item--zodiac h3 {
+    margin-bottom: 10px;
+  }
+
   .catalog {
     margin-bottom: 66px;
   }
@@ -2191,8 +2240,8 @@ button,
   }
 
   .catalog__list {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+    -ms-grid-columns: 100%;
+    grid-template-columns: 100%;
     padding: 0 10px;
   }
 
@@ -2328,10 +2377,6 @@ button,
   .burger:hover:not(.focus-visible)::after,
   .burger:hover:not(.focus-visible)::before {
     opacity: 0.8;
-  }
-
-  .catalog__item:hover:not(.focus-visible) {
-    cursor: pointer;
   }
 
   .catalog__content a:hover:not(.focus-visible) {

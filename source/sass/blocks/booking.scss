@@ -156,12 +156,23 @@
   font-size: 14px;
   line-height: 21px;
   border: 0;
+  transition: opacity $trans-default;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .booking__form label:last-of-type {
   display: flex;
   align-items: center;
   text-align: left;
+  transition: opacity $trans-default;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
 
   @include vp-767 {
     align-items: flex-start;

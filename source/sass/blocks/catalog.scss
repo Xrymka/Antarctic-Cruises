@@ -42,7 +42,7 @@
   }
 
   @include vp-767 {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     padding: 0 10px;
   }
 }
@@ -50,10 +50,6 @@
 .catalog__item {
   position: relative;
   aspect-ratio: 260/386;
-
-  @include hover {
-    cursor: pointer;
-  }
 
   @include vp-1023 {
     aspect-ratio: 309/386;

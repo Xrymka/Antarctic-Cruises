@@ -5,21 +5,23 @@ import {initBurger} from './modules/burger';
 import {initPhoneMask} from './modules/phone-mask';
 import {initForm} from './modules/send-form';
 import {createScript} from './modules/map/create-script';
-import {initMap} from './modules/map/map';
+import {observer, target} from './modules/map/lazy-load-map';
 
 window.addEventListener('DOMContentLoaded', () => {
 
   resetDefaultClass();
 
   iosVhFix();
-  createScript();
   initBurger();
+  createScript();
 
   window.addEventListener('load', () => {
     initModals();
     initPhoneMask();
     initForm();
-    initMap();
+
+    observer.observe(target);
+
   });
 });
 

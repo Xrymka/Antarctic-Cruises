@@ -74,7 +74,9 @@
 }
 
 .contacts__link {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
+  justify-content: flex-start;
   align-items: center;
   transition: opacity $trans-default;
 
